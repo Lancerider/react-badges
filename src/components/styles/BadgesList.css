@@ -1,4 +1,4 @@
-.BadgesList ul>li {
+.BadgesList li {
   margin-bottom: 1rem;
 }
 
@@ -10,10 +10,35 @@
   padding: 1rem;
 }
 
+.BadgesListItem:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.45);
+}
+
 .BadgesListItem__avatar {
   border-radius: 50%;
   background: #a3a3a3;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
   width: 80px;
   height: 80px;
+}
+
+.Twitter__name {
+  color: #1da1f2;
+  
+}
+.Twitter__logo {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('../../images/icon-twitter_opt.png');
+  background-size: 20px;
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+
+.BadgesList_error, .BadgesList_no-data {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
 }
