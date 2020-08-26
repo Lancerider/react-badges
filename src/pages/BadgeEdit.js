@@ -4,19 +4,33 @@ import Badge from '../components/Badge'
 import BadgeForm from '../components/BadgeForm'
 import PageLoading from '../components/PageLoading'
 import header from '../images/platziconf-logo.svg'
-import './styles/BadgeNew.css'
+import './styles/BadgeEdit.css'
 import api from '../api'
 
-class BadgeNew extends React.Component {
+class BadgeEdit extends React.Component {
   state = { 
-    error: null,
     loading: false,
+    error: null,
     form: {
       firstName: "",
       lastName: "",
       avatarUrl: "",
       jobTitle: "",
       twitterAccount: "",
+    }
+  }
+
+  componentDidMount() {
+    this.fetchData()
+  }
+
+  fetchData = async () => {
+    try {
+      this.setState({ loading: true, error: null})
+      const badgeData = await api.badges.read(this.props.match.params.badgeId)
+      this.setState({ loading: false, form: badgeData})
+    } catch (error) {
+      this.setState({ loading: false, error})
     }
   }
 
@@ -49,8 +63,8 @@ class BadgeNew extends React.Component {
     }
     return (
       <React.Fragment>
-        <div className="BadgeNew__hero">
-          <img src={header} alt="Logo" className="img-fluid BadgeNew__hero-image" />
+        <div className="BadgeEdit__hero">
+          <img src={header} alt="Logo" className="img-fluid BadgeEdit__hero-image" />
         </div>
 
         <div className="container">
@@ -80,4 +94,4 @@ class BadgeNew extends React.Component {
   }
 }
 
-export default BadgeNew
+export default BadgeEdit
