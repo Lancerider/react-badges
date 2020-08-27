@@ -3,33 +3,47 @@ import { Link } from 'react-router-dom'
 
 import './styles/BadgesList.css'
 import BadgesListItem from './BadgesListItem'
+import useSearchBadges from '../utils/useSearchBadges'
 
-class BadgesList extends React.Component {
-  render() {
-    if (this.props.listFetchError) {
-      return (
-        <div className="BadgesList_error">
-          <h3>Sorry, there was an error. Try again.</h3>
-        </div>
-      )
-    }
+function BadgesList(props) {
+  const badges = props.listData
 
-    if (this.props.listData.length === 0) {
-      return (
-        <div className="BadgesList_no-data">
-          <h3>No badges were found</h3>
-          <Link to="/badges/new" className="btn btn-primary">
-            Create new badge
-          </Link>
-        </div>
-      )
-    }
+  const { query, setQuery, filteredBadges } = useSearchBadges(badges) 
 
+  if (props.listFetchError) {
     return (
+      <div className="BadgesList_error">
+        <h3>Sorry, there was an error. Try again.</h3>
+      </div>
+    )
+  }
+
+  if (filteredBadges.length === 0) {
+    return (
+      <div className="BadgesList_no-data">
+        <h3>No badges were found</h3>
+        <Link to="/badges/new" className="btn btn-primary">
+          Create new badge
+        </Link>
+      </div>
+    )
+  }
+
+  return (
+    <React.Fragment>
       <div className="Badges__list">
+        <div className="form-group">
+          <label>Filter Badges</label>
+          <input type="text" className="form-control" 
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value)
+            }}
+          />
+        </div>
         <div className="Badges__container">
           <ul className="list-unstyled BadgesList">
-            {this.props.listData.map((badge) => {
+            {filteredBadges.map((badge) => {
               return (
                 <Link
                   key={badge.id}
@@ -43,8 +57,8 @@ class BadgesList extends React.Component {
           </ul>
         </div>
       </div>
-    )
-  }
+    </React.Fragment>
+  )
 }
 
 export default BadgesList
