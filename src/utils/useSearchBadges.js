@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function useSearchBadges(badges) {
+  console.log("Console log : useSearchBadges -> badges", badges)
   const [query, setQuery] = React.useState('')
   const [filteredBadges, setFilteredBadges] = React.useState(badges)
 
@@ -14,5 +15,5 @@ export default function useSearchBadges(badges) {
     setFilteredBadges(results)
   }, [badges, query])
 
-  return { setQuery, filteredBadges}
+  return { setQuery, filteredBadges }
 }
