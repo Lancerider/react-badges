@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import md5 from 'md5'
 import Badge from './Badge'
 import DeleteBadgeModal from './DeleteBadgeModal'
+import NavigationSection from './NavigationSection'
 
 import confLogo from '../images/platziconf-logo.svg'
 
@@ -25,9 +26,12 @@ function BadgeDetails(props) {
           </div>
         </div>
       </div>
+
+      <NavigationSection to="/badges"/>
+
       <div className="container">
         <div className="row">
-          <div className="col">
+          <div className="col offset-3">
             <Badge
               firstName={badge.firstName}
               lastName={badge.lastName}

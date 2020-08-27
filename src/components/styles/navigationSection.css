@@ -1,0 +1,9 @@
+.NavigationSection__image {
+  width: 1rem;
+  margin: 4px;
+}
+
+.NavigationSection__text {
+  text-decoration: none;
+  color: #333;
+}

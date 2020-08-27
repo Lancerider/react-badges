@@ -3,8 +3,11 @@ import React from 'react'
 import Badge from '../components/Badge'
 import BadgeForm from '../components/BadgeForm'
 import PageLoading from '../components/PageLoading'
+import NavigationSection from '../components/NavigationSection'
+
 import header from '../images/platziconf-logo.svg'
 import './styles/BadgeNew.css'
+
 import api from '../api'
 
 class BadgeNew extends React.Component {
@@ -53,6 +56,8 @@ class BadgeNew extends React.Component {
           <img src={header} alt="Logo" className="img-fluid BadgeNew__hero-image" />
         </div>
 
+        <NavigationSection to="/badges"/>
+        
         <div className="container">
           <div className="row">
             <div className="col">
