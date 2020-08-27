@@ -1,0 +1,13 @@
+.notFoundData {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 100%;
+}
+
+.notFoundData h1 {
+  align-self: center;
+  color: #bbb;
+}
