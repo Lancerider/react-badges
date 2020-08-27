@@ -33,7 +33,7 @@ class BadgesList extends React.Component {
               return (
                 <Link
                   key={badge.id}
-                  to={`/badges/${badge.id}/edit`}
+                  to={`/badges/${badge.id}`}
                   className="text-reset text-decoration-none"
                 >
                   <BadgesListItem key={badge.id} badgeData={badge} />
