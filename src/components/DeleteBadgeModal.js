@@ -2,6 +2,7 @@ import React from 'react'
 
 import Modal from './Modal'
 import './styles/Modal.css'
+import './styles/DeleteBadgeModal.css'
 
 function DeleteBadgeModal(props) {
   return (
