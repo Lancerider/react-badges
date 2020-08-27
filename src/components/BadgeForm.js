@@ -6,8 +6,6 @@ class BadgeForm extends React.Component {
   render() {
     return (
       <div className="">
-        <h1>New Attendat</h1>
-
         <form onSubmit={this.props.onSubmit} action="">
           <div className="form-group">
             <label>First Name</label>
