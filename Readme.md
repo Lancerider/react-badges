@@ -21,7 +21,7 @@ To install the dependencies for this project (defined in `package.json` file) yo
 ```sh
 $ cd react-badges # To access the project folder
 $ npm install # To install all dependencies
-$ npm start # To initialize the local server
+$ npm run dev # To initialize the local server
 ```
 
 You can verify that the application server is running by navigating to the default address
@@ -40,6 +40,6 @@ $ npm run deploy
 ```
 
 ## See current DEMO
-You could find a live demo of this project current development stage in this [heroku app](https://metricks.herokuapp.com/).
+You could find a live demo of this project current development stage in this [heroku app](https://react-badges.herokuapp.com/).
 
 For detailed explanation on how things work, check out [React.js docs](https://es.reactjs.org/docs/getting-started.html).

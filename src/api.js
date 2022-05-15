@@ -1,4 +1,4 @@
-const BASE_URL = 'https://react-badge-json.herokuapp.com';
+const BASE_URL = process.env.REACT_APP_API_URL;
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 const randomNumber = (min = 0, max = 1) =>
